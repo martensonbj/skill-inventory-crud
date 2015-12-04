@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/application.css">
   <title>Skill Inventory</title>
 </head>
 <body>
-  <%= yield %>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Gangsta Skillz</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/skills">Skills</a></li>
+        <li><a href="/skills/new">New Skill</a></li>
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">Delete</a></li>
+      </ul>
+      <ul class="side-nav teal lighten-2" id="mobile-demo">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/skills">skills</a></li>
+        <li><a href="/skills/new">New Skill</a></li>
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">Delete</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class = "main_content">
+    <%= yield %>
+  </main>
+  <%= erb :footer %>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 </body>
 </html>

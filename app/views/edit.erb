@@ -1,0 +1,12 @@
+<h1>Edit Skill</h1>
+
+<form action="/skills/<%= @skill.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <input id="skill_name" type="text" value="<%= @skill.name %>" name="skill[name]"/><br/>
+  <textarea id="skill_status" name="skill[status]"><%= @skill.status %></textarea><br/>
+  <button class="btn waves-effect waves-light btn-large cyan darken-4" type="submit" name="action" value="submit">
+    <i class="material-icons left">repeat</i>
+    <span>MAKE SKILL CHANGE</span>
+  </button>
+</form>

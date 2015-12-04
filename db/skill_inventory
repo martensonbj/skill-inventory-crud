@@ -1,0 +1,9 @@
+---
+skills:
+- id: 5
+  name: AntiPrioritizing
+  status: Pretty f'ing awesome
+- id: 6
+  name: Baking Cookies
+  status: 'Usually chocolate chip, sometimes brownies are also a thing. '
+total: 6
