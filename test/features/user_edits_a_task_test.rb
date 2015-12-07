@@ -10,12 +10,6 @@ class UserEditsASkill < FeatureTest
   end
 
   def test_a_user_can_edit_a_skill
-    #As a user
-    #When I am on the skill edit page
-    #And I click edit
-    #And I enter a new title
-    #And I click submit
-    #Then I am redirected to the individual skill page and the title is now updated
     create_skills(1)
     id = SkillInventory.all.last.id
 

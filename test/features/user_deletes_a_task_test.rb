@@ -10,10 +10,6 @@ class UserDeletesASkill < FeatureTest
   end
 
   def test_a_user_can_delete_a_skill
-    #As a user
-    #When I am on the skill index page
-    #And I click delete
-    #Then the skill is deleted and I stay on the index page
     create_skills(1)
 
     visit '/skills'

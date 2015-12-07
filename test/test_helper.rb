@@ -8,7 +8,6 @@ require 'capybara'
 DatabaseCleaner[:sequel, {:connection => Sequel.sqlite("db/skill_inventory_test.sqlite3")}].strategy = :truncation
 
 Capybara.app = SkillInventoryApp
-# set to classname of Sinatra App
 
 class Minitest::Test
   def setup

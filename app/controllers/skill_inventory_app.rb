@@ -20,6 +20,45 @@ class SkillInventoryApp < Sinatra::Base
     redirect '/skills'
   end
 
+  post '/save_image' do
+    @filename = params[:file][:filename]
+    file = params[:file][:filename]
+
+    File.open("./uploads/#{@filename}", 'wb') do |f|
+      f.write(file.read)
+    end
+
+    erb :show_image
+  end
+
+  get '/send_email' do
+    erb :send_email
+  end
+
+  post '/send_email' do
+    @skills = SkillInventory.all
+    @name = params[:name]
+    Pony.mail({ :to => params[:given_email],
+                :from => 'brenna.school.projects@gmail.com',
+                :subject => 'You Sent an Email from Sinatra #{@name}!!',
+                :headers => { 'Content-Type' => 'text/html' },
+                :body    => erb(:'/emails/email', layout: :'/emails/email_wrapper') })
+
+
+    Pony.options = ({ :via_options          => {
+            :address              => "smtp.gmail.com",
+            :port                 => 587,
+            :user_name            => 'brenna.school.projects@gmail.com',
+            :password             => 'code4lyfe',
+            :authentication       => 'plain',
+            :enable_starttls_auto => true
+            },
+            :via                  => :smtp })
+
+    redirect '/skills'
+
+  end
+
   get '/skills/:id' do |id|
     @skill = SkillInventory.find(id.to_i)
     erb :show
@@ -32,7 +71,6 @@ class SkillInventoryApp < Sinatra::Base
 
   put '/skills/:id' do |id|
     SkillInventory.update(id.to_i, params[:skill])
-    #tasks comes in as hash {task =>{title: some title, descripton:somedescription}}
     redirect "/skills/#{id}"
   end
 

@@ -1,0 +1,7 @@
+<h1 style="color: #e91e63;">Thanks for using Skillz!</h1>
+<div style="">
+  <h3 style="color: #ffc107;"><%= @name %>: Check out your SWEET skills:</h3>
+  <% @skills.each do |skill| %>
+  <p style="color: #ffc107;"><%= skill.id %>. <%= skill.name %></a></p>
+  <% end %>
+<div>

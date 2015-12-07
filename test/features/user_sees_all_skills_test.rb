@@ -1,13 +1,9 @@
 require_relative '../test_helper'
 
 class UserSeesAllSkillsTest < FeatureTest
-  def test_user_sees_index_of_tasks
 
-  SkillInventory.create({ :name => "Droppin Beats}", :status => "Pretty Awesome"})
-  SkillInventory.create({ :name => "Other Stuff}", :status => "Also Good At It"})
-    # As a user
-    # When I visit the skills page
-    # Then I see a list of skills
+  def test_user_sees_index_of_tasks
+    SkillInventory.create({ :name => "Droppin Beats}", :status => "Pretty Awesome"})
 
     visit '/skills'
 
@@ -16,4 +12,5 @@ class UserSeesAllSkillsTest < FeatureTest
       assert page.has_content?("Other Stuff")
     end
   end
+  
 end

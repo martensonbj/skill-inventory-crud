@@ -1,20 +1,26 @@
 <h1>My Skills</h1>
-
+<div class = "divider"></div>
 
 <% @skills.each do |skill| %>
-  <div class="each_skill">
-    <a class="skill_link" href="/skills/<%= skill.id %>"><%= skill.name %></a>
-    <div class="row skills_buttons">
-      <div class="col sm6">
-        <a class="change_skill_link center-align" href="/skills/<%= skill.id %>/edit">Edit</a>
-      </div>
-      <div class = "col sm6 each_delete">
-        <form class="delete_form center-align" action="/skills/<%= skill.id %>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="delete">
-        </form>
-      </div>
-    </div>
+
+
+  <div class="skill_container gray col s12">
+    <div class="each_skill">
+      <a class="skill_link" href="/skills/<%= skill.id %>"><%= skill.name %></a><p><%=skill.status%></p>
+
+      <div class="row skills_buttons">
+        <div class="col sm6">
+          <a class="change_skill_link center-align" href="/skills/<%= skill.id %>/edit">Edit</a>
+        </div>
+
+        <div class = "col sm6 each_delete">
+          <form class="delete_form center-align" action="/skills/<%= skill.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="delete">
+          </form>
+        </div>
+      </div> <!--skills_buttons-->
+    </div><!--each_skill-->
   </div>
 
 <% end %>

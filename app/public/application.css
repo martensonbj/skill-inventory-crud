@@ -1,9 +1,19 @@
 html {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Cuprum', sans-serif;
 }
 
+body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+ }
+
+main {
+   flex: 1 0 auto;
+ }
+
 nav {
-    background-color: #B5A8A8;
+  background-color: #B5A8A8;
 }
 
 nav .brand-logo {
@@ -18,13 +28,17 @@ h1 {
     color: #aaa;
 }
 
-.each_skill {
-    width: 18%;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 40px;
-    border-bottom: 1px solid #d0d0d0;
+a.skill_link {
+    color: rgba(82, 70, 70, 1);
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: ;
 }
+
+a.skill_link:hover {
+    color: rgba(82, 70, 70, 0.6);
+  }
 
 a.change_skill_link.center-align {
     padding: 5px;
@@ -32,14 +46,31 @@ a.change_skill_link.center-align {
     color: black;
 }
 
+a.change_skill_link.center-align {
+    padding: 5px;
+    display: block;
+    color: black;
+    width: 100px;
+    height: 36px;
+    box-shadow: 2px 2px 30px #ddd;
+    padding-top: 9px;
+}
+
 .col.sm6.each_delete input {
     padding: 10px;
+}
+
+.row.skills_buttons {
+    width: 250px;
+    margin: 0 auto;
 }
 
 .each_delete input[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
+    width: 100px;
     border: none;
+    box-shadow: 2px 2px 30px #ddd;
     background-color: transparent;
     text-transform: capitalize;
 }
@@ -68,8 +99,57 @@ form.new_form label {
     box-shadow: none;
 }
 
+.card-panel {
+  text-align: center;
+}
+
+.card-panel:hover {
+    background-color: #524646;
+}
+
+.skill_container {
+    width: 500px;
+    box-shadow: 2px 2px 26px #BBB0B0;
+    padding: 20px;
+    margin: 25px auto;
+    text-align: center;
+}
+
 .card .card-action a {
   color: #000;
   text-transform: lowercase;
   font-size: 15px;
+}
+
+form.general_form {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #F3F3F3;
+    box-shadow: 4px 4px 12px #bbb;
+    margin-top: 25px;
+    padding: 20px;
+}
+
+form.new_form.general_form button, #send_email_form button {
+  background-color: rgba(82, 70, 70, 0.6)!important;
+}
+
+form.new_form.general_form button:hover, #send_email_form button:hover {
+  background-color: rgba(82, 70, 70, 1)!important;
+}
+
+#send_email_form fieldset {
+  margin-bottom: 20px;
+}
+
+.new_form textarea {
+  margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 30px;
+    font-size: 23px;
+    width: 100%;
 }
